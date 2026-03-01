@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>savory & sweet · contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <a href="../index.html">savory<span>&sweet</span></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html">Home</a>
+        <a href="../recipes/">Recipes</a>
+        <a href="../tag/">Tags</a>
+        <a href="../about/">About</a>
+        <a href="index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="contact-form">
+      <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #3e2e22;">drop us a line</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">your name</label>
+          <input type="text" id="name" placeholder="e.g. Alex" required>
+        </div>
+        <div class="form-group">
+          <label for="email">email address</label>
+          <input type="email" id="email" placeholder="hello@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">message</label>
+          <textarea id="message" rows="5" placeholder="I'd love to know..."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">send message ✨</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 savory&sweet — crafted with love & fresh ingredients.</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We’ll get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

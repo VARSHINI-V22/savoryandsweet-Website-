@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>savory & sweet · recipe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <a href="../index.html">savory<span>&sweet</span></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html">Home</a>
+        <a href="../recipes/">Recipes</a>
+        <a href="../tag/">Tags</a>
+        <a href="../about/">About</a>
+        <a href="../contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="javascript:history.back()" class="btn btn-small back-btn"><i class="fas fa-arrow-left"></i> back</a>
+    <div id="recipe-detail-container" class="recipe-detail">
+      <!-- filled by JavaScript -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 savory&sweet — crafted with love & fresh ingredients.</p>
+  </footer>
+
+  <script src="../assets/js/recipes.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+   
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    const recipe = recipes[id];
+
+    const container = document.getElementById('recipe-detail-container');
+    if (recipe) {
+      container.innerHTML = `
+        <div class="recipe-detail-header">
+          <img src="${recipe.image}" alt="${recipe.name}">
+          <div class="recipe-detail-info">
+            <h2>${recipe.name}</h2>
+            <span class="recipe-detail-tag"><i class="fas fa-tag"></i> ${recipe.tag}</span>
+            <p><strong>${recipe.description}</strong></p>
+          </div>
+        </div>
+        <div class="ingredients">
+          <h3>🧂 ingredients</h3>
+          <ul>
+            ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="instructions">
+          <h3>📝 instructions</h3>
+          <ol>
+            ${recipe.instructions.map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </div>
+      `;
+    } else {
+      container.innerHTML = '<p>Recipe not found.</p>';
+    }
+  </script>
+</body>
+</html>

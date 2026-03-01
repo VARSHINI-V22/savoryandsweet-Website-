@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>savory & sweet · home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <a href="index.html">savory<span>&sweet</span></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="recipes/">Recipes</a>
+        <a href="tag/">Tags</a>
+        <a href="about/">About</a>
+        <a href="contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Cook with heart,<br>eat with joy.</h1>
+        <p>Explore hundreds of wholesome recipes — from quick breakfasts to festive dinners.</p>
+        <a href="recipes/" class="btn">Browse recipes <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-utensils"></i>
+      </div>
+    </div>
+    <h2 style="font-size: 2.2rem; margin-top: 2rem;">✨ featured dishes</h2>
+    <div id="featured-recipes" class="card-grid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 savory&sweet — crafted with love & fresh ingredients.</p>
+  </footer>
+
+  <script src="assets/js/recipes.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    
+    renderCards(recipes.slice(0, 8), 'featured-recipes', 'recipe/index.html?id=');
+  </script>
+</body>
+</html>
