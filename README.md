@@ -19,3 +19,4 @@ What this project includes
 -> Category tags (Breakfast, Lunch, Dinner, Dessert)
 
 -> Clean and responsive design
+
